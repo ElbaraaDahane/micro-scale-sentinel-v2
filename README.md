@@ -24,5 +24,5 @@ Micro-Scale Sentinel helps you distinguish **microplastics** from **biological o
 
 1. **Clone or download** this repository
 ```bash
-git clone https://github.com/yourusername/micro-scale-sentinel.git
+git clone https://github.com/ElbaraaDahane/micro-scale-sentinel-v2.git
 cd micro-scale-sentinel
