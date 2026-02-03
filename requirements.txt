@@ -7,7 +7,7 @@
 streamlit>=1.28.0,<2.0.0          # Web UI framework - core dependency
 
 # === COMPUTER VISION & IMAGE PROCESSING ===
-opencv-python>=4.8.0,<5.0.0       # CLAHE enhancement, contour detection, filtering
+opencv-python-headless>=4.8.0,<5.0.0      # CLAHE enhancement, contour detection, filtering
 Pillow>=10.0.0,<11.0.0            # Image I/O and format handling
 numpy>=1.24.3,<2.0.0              # Array operations (OpenCV dependency)
 
