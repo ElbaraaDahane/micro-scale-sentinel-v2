@@ -58,8 +58,7 @@ with st.sidebar:
     st.markdown("---")
     
     # API Key Input (secure)
-    api_key = st.text_input(
-        "🔑 Gemini API Key", 
+    api_key = st.secrets["AIzaSyAMajyWBBBbA5k1LZoZG2F48QsWICVXfnU"] 
         type="password",
         help="Get your free API key from makersuite.google.com/app/apikey",
         placeholder="Paste your API key here..."
