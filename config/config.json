@@ -1,1 +1,49 @@
-
+{
+  "system": {
+    "name": "Micro-Scale Sentinel",
+    "version": "1.0.0",
+    "description": "AI-powered microplastic detection for holographic microscopy"
+  },
+  
+  "preprocessing": {
+    "clahe_clip_limit": 3.0,
+    "clahe_grid_size": 8,
+    "bilateral_diameter": 9,
+    "bilateral_sigma_color": 75,
+    "bilateral_sigma_space": 75,
+    "target_image_size": 1024
+  },
+  
+  "feature_extraction": {
+    "default_scale_um_per_pixel": 0.5,
+    "min_particle_size_um": 50,
+    "max_particle_size_um": 5000,
+    "circularity_threshold": 0.7
+  },
+  
+  "classification": {
+    "gemini_model": "gemini-1.5-flash",
+    "api_timeout_seconds": 30,
+    "max_retries": 2,
+    "confidence_threshold_high": 85,
+    "confidence_threshold_low": 60
+  },
+  
+  "physics_constants": {
+    "refractive_index": {
+      "water": 1.33,
+      "pet": 1.575,
+      "hdpe": 1.54,
+      "pp": 1.49,
+      "ps": 1.55,
+      "pvc": 1.54,
+      "diatoms": 1.35,
+      "copepods": 1.33
+    },
+    "size_ranges_um": {
+      "microplastic_small": 100,
+      "microplastic_large": 500,
+      "copepod_typical": 200
+    }
+  }
+}
