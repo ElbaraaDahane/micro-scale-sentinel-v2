@@ -55,16 +55,14 @@ with st.sidebar:
     st.title("⚙️ Configuration")
     st.markdown("---")
     
-    # API Key Input (secure)
-    api_key = st.text_input(
-        "AIzaSyAMajyWBBBbA5k1LZoZG2F48QsWICVXfnU", 
-        type="password",
-        help="Get your free API key from makersuite.google.com/app/apikey",
-        placeholder="Paste your API key here..."
-    )
-    
-    if not api_key:
-        st.warning("⚠️ Please enter your API key to analyze images")
+    # Load API Key from secrets (hidden from users)
+    try:
+        api_key = st.secrets["GEMINI_API_KEY"]
+        st.success("✅ AI Service Connected", icon="🔒")
+    except Exception as e:
+        st.error("⚠️ API Configuration Missing")
+        st.info("Admin: Please configure GEMINI_API_KEY in Streamlit Secrets")
+        st.stop()  # Stop app if no API key
     
     st.markdown("---")
     
@@ -98,6 +96,7 @@ with st.sidebar:
         help="Show intermediate processing steps"
     )
     
+    # Educational sections remain the same...
     st.markdown("---")
     
     # Educational Section: Physics Reference
@@ -129,7 +128,6 @@ with st.sidebar:
         
         **Detection challenge:** They look similar to organic particles (algae, sediment) under microscopes. This AI uses **physics-based features** (refractive index, shape) to distinguish them.
         """)
-
 # =============================================================================
 # HELPER FUNCTIONS
 # =============================================================================
