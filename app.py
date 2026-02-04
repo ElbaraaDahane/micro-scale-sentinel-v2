@@ -216,11 +216,7 @@ if image is not None:
     st.markdown("---")
     st.subheader("🤖 AI Analysis")
     
-    if not api_key:
-        st.error("🔑 Please enter your Gemini API Key in the sidebar to continue")
-        st.info("💡 **Student Tip:** You can get a free API key at makersuite.google.com/app/apikey")
-    else:
-        analyze_btn = st.button("🔍 Analyze Particle", type="primary", use_container_width=True)
+analyze_btn = st.button("🔍 Analyze Particle", type="primary", use_container_width=True)
         
         if analyze_btn:
             progress_bar = st.progress(0)
