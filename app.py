@@ -11,9 +11,8 @@ import io
 import pandas as pd
 import json
 import os
-from datetime import datetime
 import base64
-
+from datetime import datetime, timedelta
 # Import our custom modules
 from src.preprocessing import preprocess_image, extract_features
 from src.classifier import classify_particle
@@ -215,6 +214,11 @@ if image is not None:
     
     st.markdown("---")
     st.subheader("🤖 AI Analysis")
+    if 'last_analysis' in st.session_state:
+    time_diff = datetime.now() - st.session_state['last_analysis']
+    if time_diff.seconds < 5:  # 5 second cooldown
+        st.warning("Please wait a few seconds between analyses")
+        st.stop()
     
 analyze_btn = st.button("🔍 Analyze Particle", type="primary", use_container_width=True)
         
