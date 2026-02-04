@@ -54,7 +54,7 @@ if 'features' not in st.session_state:
 # LOAD API KEY FROM SECRETS (HIDDEN FROM USERS)
 # =============================================================================
 try:
-    api_key = st.secrets["GEMINI_API_KEY"]
+    api_key = st.secrets["AIzaSyAMajyWBBBbA5k1LZoZG2F48QsWICVXfnU"]
     api_configured = True
 except Exception as e:
     api_configured = False
