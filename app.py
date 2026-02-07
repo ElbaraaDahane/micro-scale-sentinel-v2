@@ -53,6 +53,13 @@ if 'features' not in st.session_state:
 # =============================================================================
 # LOAD API KEY FROM SECRETS (HIDDEN FROM USERS)
 # =============================================================================
+# DEBUG: Check what secrets are loaded
+st.sidebar.write("Debug Info:")
+try:
+    st.sidebar.write("Secrets available:", list(st.secrets.keys()))
+    st.sidebar.write("API Key found:", "GEMINI_API_KEY" in st.secrets)
+except Exception as e:
+    st.sidebar.write("Error:", str(e))
 try:
     api_key = st.secrets["AIzaSyAMajyWBBBbA5k1LZoZG2F48QsWICVXfnU"]
     api_configured = True
